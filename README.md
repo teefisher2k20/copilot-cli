@@ -69,9 +69,14 @@ To use this CLI in VS Code:
 3. The CLI will execute in your current workspace directory
 
 You can also:
-- Add it as a task in `.vscode/tasks.json`
+- Add it as a task in `.vscode/tasks.json` (see `.vscode.example/tasks.json` for a template)
 - Create a keyboard shortcut to run it
 - Use it in your npm scripts in `package.json`
+
+To use the example VS Code tasks:
+```bash
+cp -r .vscode.example .vscode
+```
 
 ### For Official GitHub Copilot CLI Features
 
