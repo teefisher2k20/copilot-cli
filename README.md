@@ -1,83 +1,112 @@
-# GitHub Copilot CLI (Public Preview)
+# GitHub Copilot CLI (Community Edition)
 
 The power of GitHub Copilot, now in your terminal.
 
-GitHub Copilot CLI brings AI-powered coding assistance directly to your command line, enabling you to build, debug, and understand code through natural language conversations. Powered by the same agentic harness as GitHub's Copilot coding agent, it provides intelligent assistance while staying deeply integrated with your GitHub workflow.
+This is a community edition CLI tool for GitHub Copilot. This repository provides a basic CLI setup that can be installed globally.
 
-See [our official documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) for more information.
+> **Note:** This is a community project. For the official GitHub Copilot CLI with full features, please visit [GitHub's official Copilot CLI documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli) and install `@github/copilot`.
 
-![Image of the splash screen for the Copilot CLI](https://github.com/user-attachments/assets/51ac25d2-c074-467a-9c88-38a8d76690e3)
-
-## 🚀 Introduction and Overview
-
-We're bringing the power of GitHub Copilot coding agent directly to your terminal. With GitHub Copilot CLI, you can work locally and synchronously with an AI agent that understands your code and GitHub context.
-
-- **Terminal-native development:** Work with Copilot coding agent directly in your command line — no context switching required.
-- **GitHub integration out of the box:** Access your repositories, issues, and pull requests using natural language, all authenticated with your existing GitHub account.
-- **Agentic capabilities:** Build, edit, debug, and refactor code with an AI collaborator that can plan and execute complex tasks.
-- **MCP-powered extensibility:** Take advantage of the fact that the coding agent ships with GitHub's MCP server by default and supports custom MCP servers to extend capabilities.
-- **Full control:** Preview every action before execution — nothing happens without your explicit approval.
-
-We're still early in our journey, but with your feedback, we're rapidly iterating to make the GitHub Copilot CLI the best possible companion in your terminal.
-
-## 📦 Getting Started
-
-### Supported Platforms
-
-- **Linux**
-- **macOS**
-- **Windows**
+## 📦 Installation and Usage
 
 ### Prerequisites
 
-- **Node.js** v22 or higher
-- **npm** v10 or higher
-- (On Windows) **PowerShell** v6 or higher
-- An **active Copilot subscription**. See [Copilot plans](https://github.com/features/copilot/plans?ref_cta=Copilot+plans+signup&ref_loc=install-copilot-cli&ref_page=docs).
+- **Node.js** v14 or higher
+- **npm** v6 or higher
 
-If you have access to GitHub Copilot via your organization of enterprise, you cannot use GitHub Copilot CLI if your organization owner or enterprise administrator has disabled it in the organization or enterprise settings. See [Managing policies and features for GitHub Copilot in your organization](http://docs.github.com/copilot/managing-copilot/managing-github-copilot-in-your-organization/managing-github-copilot-features-in-your-organization/managing-policies-for-copilot-in-your-organization) for more information.
+### Installation Options
 
-### Installation
+#### Option 1: Install from Source (This Repository)
 
-Install globally with npm:
+1. Clone this repository:
+```bash
+git clone https://github.com/teefisher2k20/copilot-cli.git
+cd copilot-cli
+```
+
+2. Install globally:
+```bash
+npm install -g .
+```
+
+Or use npm link for development:
+```bash
+npm link
+```
+
+3. Run the CLI:
+```bash
+copilot-cli
+```
+
+#### Option 2: Install Official GitHub Copilot CLI
+
+For the full-featured official GitHub Copilot CLI:
 ```bash
 npm install -g @github/copilot
 ```
 
-### Launching the CLI
+### Usage
+
+After installation, you can run the CLI from anywhere:
 
 ```bash
-copilot
+# Run the CLI
+copilot-cli
+
+# Show help
+copilot-cli --help
+
+# Show version
+copilot-cli --version
 ```
 
-On first launch, you'll be greeted with our adorable animated banner! If you'd like to see this banner again, launch `copilot` with the `--banner` flag. 
+### Running in VS Code
 
-If you're not currently logged in to GitHub, you'll be prompted to use the `/login` slash command. Enter this command and follow the on-screen instructions to authenticate.
+To use this CLI in VS Code:
 
-#### Authenticate with a Personal Access Token (PAT)
+1. Open the integrated terminal in VS Code (`Ctrl+` ` or `Cmd+` `)
+2. Run `copilot-cli` in the terminal
+3. The CLI will execute in your current workspace directory
 
-You can also authenticate using a fine-grained PAT with the "Copilot Requests" permission enabled.
+You can also:
+- Add it as a task in `.vscode/tasks.json` (see `.vscode.example/tasks.json` for a template)
+- Create a keyboard shortcut to run it
+- Use it in your npm scripts in `package.json`
 
-1. Visit https://github.com/settings/personal-access-tokens/new
-2. Under "Permissions," click "add permissions" and select "Copilot Requests"
-3. Generate your token
-4. Add the token to your environment via the environment variable `GH_TOKEN` or `GITHUB_TOKEN` (in order of precedence)
+To use the example VS Code tasks:
+```bash
+cp -r .vscode.example .vscode
+```
 
-### Using the CLI
+### For Official GitHub Copilot CLI Features
 
-Launch `copilot` in a folder that contains code you want to work with. 
+For full features including:
+- Terminal-native AI-powered coding assistance
+- GitHub integration (repositories, issues, PRs)
+- Agentic capabilities (build, edit, debug, refactor)
+- MCP-powered extensibility
+- Multiple AI models (Claude Sonnet, GPT-5, etc.)
 
-By default, `copilot` utilizes Claude Sonnet 4.5. Run the `/model` slash command to choose from other available models, including Claude Sonnet 4 and GPT-5
+Please install the official GitHub Copilot CLI:
+```bash
+npm install -g @github/copilot
+```
 
-Each time you submit a prompt to GitHub Copilot CLI, your monthly quota of premium requests is reduced by one. For information about premium requests, see [About premium requests](https://docs.github.com/copilot/managing-copilot/monitoring-usage-and-entitlements/about-premium-requests).
+**Requirements for Official CLI:**
+- Node.js v22 or higher
+- npm v10 or higher
+- Active Copilot subscription
+- See [official documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli)
 
-For more information about how to use the GitHub Copilot CLI, see [our official documentation](https://docs.github.com/copilot/concepts/agents/about-copilot-cli).
+## 🛠️ Development
 
+To contribute or modify this CLI:
 
-## 📢 Feedback and Participation
+1. Clone the repository
+2. Make your changes
+3. Test locally with `npm link`
+4. Submit a pull request
 
-We're excited to have you join us early in the Copilot CLI journey.
+## 📄 License
 
-This is an early-stage preview, and we're building quickly. Expect frequent updates--please keep your client up to date for the latest features and fixes!
-
-Your insights are invaluable! Open issue in this repo, join Discussions, and run `/feedback` from the CLI to submit a confidential feedback survey!
+See [LICENSE.md](LICENSE.md) for details.

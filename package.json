@@ -1,0 +1,32 @@
+{
+  "name": "@teefisher2k20/copilot-cli",
+  "version": "1.0.0",
+  "description": "GitHub Copilot CLI - The power of GitHub Copilot, now in your terminal",
+  "main": "index.js",
+  "bin": {
+    "copilot-cli": "./bin/copilot-cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "copilot",
+    "cli",
+    "github",
+    "ai",
+    "assistant"
+  ],
+  "author": "teefisher2k20",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/teefisher2k20/copilot-cli.git"
+  },
+  "bugs": {
+    "url": "https://github.com/teefisher2k20/copilot-cli/issues"
+  },
+  "homepage": "https://github.com/teefisher2k20/copilot-cli#readme"
+}
